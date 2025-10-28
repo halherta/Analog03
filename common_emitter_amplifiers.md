@@ -48,7 +48,7 @@ VB = VBE + VE  (where VBE ≈ 0.7V for silicon)
 
 
 <figure style="text-align:center">
-  <img src="images/volt_div_dc_bias.png" alt="Figure 1 - Voltage divider DC bias" style="width:50%">
+  <img src="images/volt_div_dc_bias.png" alt="Figure 1 - Voltage divider DC bias" style="width:25%">
   <figcaption>Figure 1 - Voltage divider DC bias</figcaption>
   <br>
 </figure>
