@@ -45,6 +45,15 @@ VB = VBE + VE  (where VBE ≈ 0.7V for silicon)
 **Content:**
 
 **The Voltage Divider:**
+
+
+<figure style="text-align:center">
+  <img src="images/volt_div_dc_bias.png" alt="Figure 1 - Voltage divider DC bias" style="width:80%">
+  <figcaption>Figure 1 - Voltage divider DC bias</figcaption>
+  <br>
+</figure>
+
+
 Resistors R1 and R2 form a voltage divider that sets the base voltage VB.
 
 ```
