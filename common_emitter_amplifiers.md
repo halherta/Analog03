@@ -53,7 +53,7 @@ VB = VCC × R2/(R1 + R2)
 
 **Design Rules:**
 
-1. **Set the emitter voltage:** VE = 1V to 2V (provides stability)
+1. **Set the emitter voltage:** VE = 1V (provides stability)
 
 2. **Calculate RE:**
    ```
@@ -85,16 +85,49 @@ Design the bias network.
 **Solution:**
 ```
 Step 1: VCEQ = 0.5 × 15V = 7.5V
-Step 2: VE = 1.5V (chosen)
-Step 3: RE = 1.5V/2mA = 750Ω → use 750Ω
+Step 2: VE = 1V (chosen)
+Step 3: RE = 1V/2mA = 500Ω
 
-Step 4: RC = (15V - 7.5V)/2mA - 750Ω = 3000Ω → use 3kΩ
+Step 4: RC = (15V - 7.5V)/2mA - 500Ω = 3250Ω → choose 3.25kΩ
 
-Step 5: R2 ≤ 150 × 750/10 = 11.25kΩ → choose 10kΩ
+Step 5: R2 ≤ 150 × 500/10 = 7.5kΩ → choose 1kΩ
 
-Step 6: VB = 0.7V + 1.5V = 2.2V
-        R1 = 10kΩ × (15V - 2.2V)/2.2V = 58.2kΩ → use 56kΩ
+Step 6: VB = 0.7V + 1V = 1.7V
+        R1 = 1kΩ × (15V - 1.7V)/1.7V = 7.82kΩ
 ```
+| Component | Value |
+|-----------|-------|
+| VCC | 15V |
+| R1 | 7.82kΩ |
+| R2 | 1kΩ |
+| RC | 3.25Ω |
+| RE | 500Ω |
+
+**Practice Problem 1.3:**
+Given: VCC = 12V, ICQ = 1.5mA, β = 100
+Design the bias network.
+
+**Solution:**
+```
+Step 1: VCEQ = 0.5 × 12V = 6V
+Step 2: VE = 1V (chosen)
+Step 3: RE = 1V/1.5mA = 666.67Ω
+
+Step 4: RC = (12V - 6V)/1.5mA - 666.67Ω = 3.33kΩ 
+
+Step 5: R2 ≤ 100 × 666.67/10 = 6.67kΩ → choose 1kΩ
+
+Step 6: VB = 0.7V + 1V = 1.7V
+        R1 = 1kΩ × (12V - 1.7V)/1.7V = 6.06kΩ
+```
+
+| Component | Value |
+|-----------|-------|
+| VCC | 12V |
+| R1 | 6.06kΩ |
+| R2 | 1kΩ |
+| RC | 3.33kΩ |
+| RE | 666.67Ω |
 
 ---
 
