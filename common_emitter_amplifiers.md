@@ -2,6 +2,12 @@
 
 ---
 
+<figure style="text-align:center">
+  <img src="images/common-emitter.png" alt="Figure 1 - Common emitter amplifier" style="width:25%">
+  <figcaption>Figure 1 - Common emitter amplifier</figcaption>
+  <br>
+</figure>
+
 ## Module 1: Foundational Concepts
 
 ### Lesson 1.1: DC Biasing Fundamentals
@@ -48,8 +54,8 @@ VB = VBE + VE  (where VBE ≈ 0.7V for silicon)
 
 
 <figure style="text-align:center">
-  <img src="images/volt_div_dc_bias.png" alt="Figure 1 - Voltage divider DC bias" style="width:25%">
-  <figcaption>Figure 1 - Voltage divider DC bias</figcaption>
+  <img src="images/volt_div_dc_bias.png" alt="Figure 2- Voltage divider DC bias" style="width:25%">
+  <figcaption>Figure 2 - Voltage divider DC bias</figcaption>
   <br>
 </figure>
 
@@ -176,6 +182,12 @@ The AC input signal "rides on top of" the DC bias voltage at the base. The trans
 ---
 
 ## Module 2: Common Emitter Amplifier Characteristics
+
+<figure style="text-align:center">
+  <img src="images/common-emitter.png" alt="Figure 3 - Common emitter amplifier" style="width:25%">
+  <figcaption>Figure 3 - Common emitter amplifier</figcaption>
+  <br>
+</figure>
 
 ### Lesson 2.1: The Intrinsic Emitter Resistance (rtr)
 
@@ -378,6 +390,12 @@ This means the output power is 520 times the input power!
 
 ## Module 3: Capacitor Design
 
+<figure style="text-align:center">
+  <img src="images/common-emitter.png" alt="Figure 4 - Common emitter amplifier" style="width:25%">
+  <figcaption>Figure 4 - Common emitter amplifier</figcaption>
+  <br>
+</figure>
+
 ### Lesson 3.1: High-Pass Filter Behavior
 
 **Learning Objectives:**
@@ -462,6 +480,13 @@ C3 = 1 / (2π × 50 × 4700) = 0.677μF → use 1μF
 ---
 
 ## Module 4: Complete Design Process
+
+<figure style="text-align:center">
+  <img src="images/common-emitter.png" alt="Figure 5 - Common emitter amplifier" style="width:25%">
+  <figcaption>Figure 5 - Common emitter amplifier</figcaption>
+  <br>
+</figure>
+
 
 ### Lesson 4.1: Design Procedure Summary
 
