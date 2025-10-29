@@ -3,7 +3,7 @@
 ---
 
 <figure style="text-align:center">
-  <img src="images/common-emitter.png" alt="Figure 1 - Common emitter amplifier" style="width:25%">
+  <img src="images/common-emitter.png" alt="Figure 1 - Common emitter amplifier" style="width:40%">
   <figcaption>Figure 1 - Common emitter amplifier</figcaption>
   <br>
 </figure>
@@ -184,7 +184,7 @@ The AC input signal "rides on top of" the DC bias voltage at the base. The trans
 ## Module 2: Common Emitter Amplifier Characteristics
 
 <figure style="text-align:center">
-  <img src="images/common-emitter.png" alt="Figure 3 - Common emitter amplifier" style="width:25%">
+  <img src="images/common-emitter.png" alt="Figure 3 - Common emitter amplifier" style="width:40%">
   <figcaption>Figure 3 - Common emitter amplifier</figcaption>
   <br>
 </figure>
@@ -391,7 +391,7 @@ This means the output power is 520 times the input power!
 ## Module 3: Capacitor Design
 
 <figure style="text-align:center">
-  <img src="images/common-emitter.png" alt="Figure 4 - Common emitter amplifier" style="width:25%">
+  <img src="images/common-emitter.png" alt="Figure 4 - Common emitter amplifier" style="width:40%">
   <figcaption>Figure 4 - Common emitter amplifier</figcaption>
   <br>
 </figure>
@@ -482,7 +482,7 @@ C3 = 1 / (2π × 50 × 4700) = 0.677μF → use 1μF
 ## Module 4: Complete Design Process
 
 <figure style="text-align:center">
-  <img src="images/common-emitter.png" alt="Figure 5 - Common emitter amplifier" style="width:25%">
+  <img src="images/common-emitter.png" alt="Figure 5 - Common emitter amplifier" style="width:40%">
   <figcaption>Figure 5 - Common emitter amplifier</figcaption>
   <br>
 </figure>
