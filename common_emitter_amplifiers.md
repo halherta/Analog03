@@ -495,7 +495,7 @@ C3 = 1 / (2π × 50 × 4700) = 0.677μF → use 1μF
 **STEP 1: Design the DC Bias Network**
 Given: ICQ, VCEQ (or calculate as 0.5VCC), β, VCC
 
-1. Choose VE (typically 1-2V)
+1. Choose VE (typically 1V)
 2. Calculate RE = VE / ICQ
 3. Calculate RC = (VCC - VCEQ) / ICQ - RE
 4. Calculate R2 ≤ β × RE / 10
@@ -698,12 +698,12 @@ Design a CE amplifier with:
 
 **STEP 1: DC Bias Design**
 
-Choose VE = 1.5V
+Choose VE = 1V
 
 Calculate RE:
 ```
-RE = VE / ICQ = 1.5V / 2mA = 750Ω
-Use RE = 750Ω
+RE = VE / ICQ = 1V / 2mA = 500Ω
+Use RE = 500Ω
 ```
 
 Calculate VCEQ:
@@ -713,34 +713,33 @@ VCEQ = 0.5 × 12V = 6V
 
 Calculate RC:
 ```
-6V = 12V - 2mA(RC + 750Ω)
-6V = 12V - 2mA × RC - 1.5V
-RC = 2.25kΩ
-Use RC = 2.2kΩ (standard value)
+6V = 12V - 2mA(RC + 500Ω)
+6V = 12V - 2mA × RC - 1V
+RC = 2.5kΩ
 ```
 
 Verify VCEQ:
 ```
-VCEQ = 12V - 2mA(2.2kΩ + 750Ω) = 12V - 5.9V = 6.1V ✓
+VCEQ = 12V - 2mA(2.5kΩ + 500Ω) = 12V - 6V = 6V ✓
 ```
 
 Calculate R2:
 ```
-R2 ≤ 150 × 750 / 10 = 11.25kΩ
-Choose R2 = 10kΩ
+R2 ≤ 150 × 500 / 10 = 7.5kΩ
+Choose R2 = 1kΩ
 ```
 
 Calculate VB:
 ```
-VB = 0.7V + 1.5V = 2.2V
+VB = 0.7V + 1V = 1.7V
 ```
 
 Calculate R1:
 ```
-2.2V = 12V × 10kΩ / (R1 + 10kΩ)
-2.2(R1 + 10kΩ) = 120kΩ
-2.2R1 = 98kΩ
-R1 = 44.5kΩ → use 47kΩ
+1.7V = 12V × 1kΩ / (R1 + 1kΩ)
+1.7(R1 + 1kΩ) = 12kΩ
+1.7R1 = 10.3kΩ
+R1 = 6.06kΩ → use 6.1kΩ
 ```
 
 **STEP 2: Voltage Gain Design**
@@ -752,41 +751,35 @@ rtr = 0.026V / 2mA = 13Ω
 
 Calculate R3:
 ```
-R3 = 2200 / 50 - 13 = 44 - 13 = 31Ω
-Use R3 = 33Ω (standard value)
-```
-
-Actual gain:
-```
-Av = 2200 / (33 + 13) = 2200 / 46 = 47.8
+R3 = 2500 / 50 - 13 = 50 - 13 = 37Ω
 ```
 
 **STEP 3: Amplifier Characteristics**
 
 ```
-RIN,base = 150(33 + 13) = 6.9kΩ
+RIN,base = 150(37 + 13) = 7.5kΩ
 
-RIN = 47kΩ || 10kΩ || 6.9kΩ = 4.18kΩ
+RIN = 6.1kΩ || 1kΩ || 7.5kΩ = 770.85Ω
 
-ROUT = 2.2kΩ
+ROUT = 2.5kΩ
 
-RL > 10 × 2.2kΩ = 22kΩ
+RL > 10 × 2.5kΩ = 25kΩ
 Choose RL = 47kΩ
 
-Ai = (150 × 4180 × (2.2k || 47k)) / (6900 × 47k)
-Ai = (627000 × 2.1k) / (324.3M) = 4.06
+Ai = (150 × 770.85 × (2.5k || 47k)) / (7500 × 47k)
+Ai = (115627.50 × 2.37k) / (352.5M) = 0.7774
 
-Ap = 47.8 × 4.06 = 194
+Ap = 50 × 0.7774 = 38.87
 ```
 
 **STEP 4: Capacitor Design**
 
 ```
-C1 = 1 / (2π × 50 × 4180) = 0.761μF → use 1μF
+C1 = 1 / (2π × 50 × 770.85) = 4.13μF → use 4.7μF
 
-C2 = 1 / (2π × 50 × 46) = 69.2μF → use 100μF
+C2 = 1 / (2π × 50 × 50) = 63.66μF → use 67μF
 
-C3 = 1 / (2π × 50 × 2200) = 1.45μF → use 2.2μF
+C3 = 1 / (2π × 50 × 2500) = 1.27μF → use 1.5μF
 ```
 
 **Final Design:**
@@ -794,15 +787,15 @@ C3 = 1 / (2π × 50 × 2200) = 1.45μF → use 2.2μF
 | Component | Value |
 |-----------|-------|
 | VCC | 12V |
-| R1 | 47kΩ |
-| R2 | 10kΩ |
-| RC | 2.2kΩ |
-| RE | 750Ω |
-| R3 | 33Ω |
+| R1 | 6.1kΩ |
+| R2 | 1kΩ |
+| RC | 2.5kΩ |
+| RE | 500Ω |
+| R3 | 37Ω |
 | RL | 47kΩ |
-| C1 | 1μF |
-| C2 | 100μF |
-| C3 | 2.2μF |
+| C1 | 4.7μF |
+| C2 | 67μF |
+| C3 | 1.5μF |
 
 **Performance:**
 - Voltage Gain: 47.8
