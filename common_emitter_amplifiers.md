@@ -514,7 +514,7 @@ Given: Desired Av
 2. Calculate RIN = R1 || R2 || RIN,base
 3. Calculate ROUT = RC
 4. Choose RL > 10RC
-5. Calculate Ai
+5. Calculate Ai = (β × RIN × (RC || RL)) / (RIN,base × RL)
 6. Calculate Ap = Av × Ai
 
 **STEP 4: Design Capacitors**
@@ -574,10 +574,13 @@ VB = VBE + VE = 0.7V + 1V = 1.7V
 Calculate R1:
 ```
 VB = VCC × R2 / (R1 + R2)
+R1 = R2*((VCC - VB) / VB)
 1.7V = 20V × 10kΩ / (R1 + 10kΩ)
 1.7(R1 + 10kΩ) = 200kΩ
 1.7R1 = 200kΩ - 17kΩ = 183kΩ
-R1 = 107.6kΩ → use 110kΩ
+R1 = 107.6kΩ
+
+
 ```
 
 **STEP 2: Voltage Gain Design**
@@ -590,25 +593,25 @@ rtr = 0.026V / ICQ = 0.026V / 1mA = 26Ω
 Calculate R3:
 ```
 R3 = RC / Av - rtr = 9kΩ / 100 - 26Ω = 90Ω - 26Ω = 64Ω
-Use R3 = 68Ω (standard value)
+Use R3 = 64Ω 
 ```
 
 Recalculate actual gain:
 ```
-Av = RC / (R3 + rtr) = 9000 / (68 + 26) = 9000 / 94 = 95.7
+Av = RC / (R3 + rtr) = 9000 / (64 + 26) = 9000 / 90 = 100
 ```
 
 **STEP 3: Amplifier Characteristics**
 
 Calculate RIN,base:
 ```
-RIN,base = β(R3 + rtr) = 100(68 + 26) = 9.4kΩ
+RIN,base = β(R3 + rtr) = 100(64 + 26) = 9kΩ
 ```
 
 Calculate RIN:
 ```
-RIN = R1 || R2 || RIN,base = 110kΩ || 10kΩ || 9.4kΩ
-RIN = 1 / (1/110k + 1/10k + 1/9.4k) = 4.73kΩ
+RIN = R1 || R2 || RIN,base = 107.6kΩ  || 10kΩ || 9kΩ
+RIN = 1 / (1/110k + 1/10k + 1/9.4k) = 4.537kΩ
 ```
 
 Output resistance:
@@ -619,20 +622,20 @@ ROUT = RC = 9kΩ
 Choose load resistance:
 ```
 RL > 10 × RC = 10 × 9kΩ = 90kΩ
-Choose RL = 100kΩ
+Choose RL = 90kΩ
 ```
 
 Calculate current gain:
 ```
 Ai = (β × RIN × (RC || RL)) / (RIN,base × RL)
-Ai = (100 × 4730 × (9k || 100k)) / (9400 × 100k)
+Ai = (100 × 4537.19 × (9k || 90k)) / (9000 × 90k)
 Ai = (473000 × 8.26k) / (940M)
-Ai = 4.16
+Ai = 4.58
 ```
 
 Calculate power gain:
 ```
-Ap = Av × Ai = 95.7 × 4.16 = 398
+Ap = Av × Ai = 100 × 4.15 = 415
 ```
 
 **STEP 4: Capacitor Design**
@@ -640,23 +643,20 @@ Ap = Av × Ai = 95.7 × 4.16 = 398
 Calculate C1:
 ```
 C1 = 1 / (2π × f3dB × RIN)
-C1 = 1 / (2π × 100 × 4730) = 0.337μF
-Use C1 = 0.47μF or 1μF
+C1 = 1 / (2π × 100 × 4.537kΩ) = 0.35μF
 ```
 
 Calculate C2:
 ```
 C2 = 1 / (2π × f3dB × (R3 + rtr))
-C2 = 1 / (2π × 100 × (68 + 26))
-C2 = 1 / (2π × 100 × 94) = 16.9μF
-Use C2 = 22μF or 47μF
+C2 = 1 / (2π × 100 × (64 + 26))
+C2 = 1 / (2π × 100 × 94) = 17.7μF
 ```
 
 Calculate C3:
 ```
 C3 = 1 / (2π × f3dB × RC)
-C3 = 1 / (2π × 100 × 9000) = 0.177μF
-Use C3 = 0.22μF or 0.47μF
+C3 = 1 / (2π × 100 × 9000) = 0.18μF
 ```
 
 **Final Design Summary:**
@@ -664,21 +664,21 @@ Use C3 = 0.22μF or 0.47μF
 | Component | Value |
 |-----------|-------|
 | VCC | 20V |
-| R1 | 110kΩ |
+| R1 | 107.65kΩ |
 | R2 | 10kΩ |
 | RC | 9kΩ |
 | RE | 1kΩ |
-| R3 | 68Ω |
-| RL | 100kΩ |
-| C1 | 0.47μF |
-| C2 | 22μF |
-| C3 | 0.22μF |
+| R3 | 64Ω |
+| RL | 90kΩ|
+| C1 | 0.35μF|
+| C2 | 17.7μF |
+| C3 | 0.18μF |
 
 **Performance:**
-- Voltage Gain: 95.7
-- Current Gain: 4.16
-- Power Gain: 398
-- Input Resistance: 4.73kΩ
+- Voltage Gain: 100
+- Current Gain: 4.58
+- Power Gain: 458
+- Input Resistance: 4.54kΩ
 - Output Resistance: 9kΩ
 - f3dB: 100Hz
 
@@ -726,7 +726,7 @@ VCEQ = 12V - 2mA(2.5kΩ + 500Ω) = 12V - 6V = 6V ✓
 Calculate R2:
 ```
 R2 ≤ 150 × 500 / 10 = 7.5kΩ
-Choose R2 = 1kΩ
+Choose R2 = 5kΩ
 ```
 
 Calculate VB:
@@ -766,6 +766,7 @@ ROUT = 2.5kΩ
 RL > 10 × 2.5kΩ = 25kΩ
 Choose RL = 47kΩ
 
+Ai = (β × RIN × (RC || RL)) / (RIN,base × RL)
 Ai = (150 × 770.85 × (2.5k || 47k)) / (7500 × 47k)
 Ai = (115627.50 × 2.37k) / (352.5M) = 0.7774
 
@@ -775,10 +776,13 @@ Ap = 50 × 0.7774 = 38.87
 **STEP 4: Capacitor Design**
 
 ```
+C1 = 1 / (2π × f3dB × RIN)
 C1 = 1 / (2π × 50 × 770.85) = 4.13μF → use 4.7μF
 
+C2 = 1 / (2π × f3dB × (R3 + rtr))
 C2 = 1 / (2π × 50 × 50) = 63.66μF → use 67μF
 
+C1 = 1 / (2π × f3dB × RIN)
 C3 = 1 / (2π × 50 × 2500) = 1.27μF → use 1.5μF
 ```
 
@@ -787,23 +791,23 @@ C3 = 1 / (2π × 50 × 2500) = 1.27μF → use 1.5μF
 | Component | Value |
 |-----------|-------|
 | VCC | 12V |
-| R1 | 6.1kΩ |
-| R2 | 1kΩ |
+| R1 | 30.29kΩ |
+| R2 | 5kΩ |
 | RC | 2.5kΩ |
 | RE | 500Ω |
 | R3 | 37Ω |
-| RL | 47kΩ |
-| C1 | 4.7μF |
-| C2 | 67μF |
-| C3 | 1.5μF |
+| RL | 25kΩ |
+| C1 | 1.17μF |
+| C2 | 63.7μF |
+| C3 | 1.27μF |
 
 **Performance:**
-- Voltage Gain: 47.8
-- Current Gain: 4.06
-- Power Gain: 194
-- Input Resistance: 4.18kΩ
-- Output Resistance: 2.2kΩ
-
+- Voltage Gain: 50
+- Current Gain: 4.96
+- Power Gain: 248.15
+- Input Resistance: 2.73kΩ
+- Output Resistance: 2.5kΩ
+- f3dB: 50Hz
 ---
 
 ## Module 5: Synthesis Exercise - Common Emitter Amplifier
