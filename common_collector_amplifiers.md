@@ -341,6 +341,7 @@ The emitter follower is a **current amplifier** and **power amplifier**, not a v
   <figcaption>Figure 3 - Common collector amplifier</figcaption>
   <br>
 </figure>
+<br>
 
 **Complete Design Process:**
 
