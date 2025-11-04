@@ -54,8 +54,8 @@ The output (emitter) is almost the same as the input (base), hence "follower."
 - Understand design considerations
 
 <figure style="text-align:center">
-  <img src="images/volt-divider-bias-cc.png" alt="Figure 2 - Common collector voltage divider bias" style="width:40%">
-  <figcaption>Figure 1 - Common collector voltage divider bias</figcaption>
+  <img src="images/volt-divider-bias-cc.png" alt="Figure 2 - Common collector voltage divider bias" style="width:15%">
+  <figcaption>Figure 2 - Common collector voltage divider bias</figcaption>
   <br>
 </figure>
 
@@ -336,6 +336,12 @@ The emitter follower is a **current amplifier** and **power amplifier**, not a v
 
 ### Lesson 8.1: Design Procedure for Emitter Follower
 
+<figure style="text-align:center">
+  <img src="images/common-collector.png" alt="Figure 3 - Common collector amplifier" style="width:40%">
+  <figcaption>Figure 3 - Common collector amplifier</figcaption>
+  <br>
+</figure>
+
 **Complete Design Process:**
 
 **STEP 1: Design DC Bias Network**
@@ -500,35 +506,11 @@ Use C2 = 2.2μF or 4.7μF
 
 **Circuit Diagram:**
 
-```
-                    VCC 15V
-                       |
-                      R1
-                     33kΩ
-                       |
-        C1             |         R2
-vin ---||-------------+--------- 39kΩ
-       0.22μF         |           |
-                     Base        GND
-                       |
-                   Collector----VCC
-                       |
-                    ___▼___
-                   /       \
-                   \  T1   /  β=100
-                   /_______\
-                       |
-                    Emitter
-                       |
-                       +----||----vout
-                       |   C2
-                      RE   2.2μF    RL
-                    3.9kΩ           1kΩ
-                       |             |
-                      GND           GND
-```
-
----
+<figure style="text-align:center">
+  <img src="images/common-collector.png" alt="Figure 4 - Common collector amplifier" style="width:40%">
+  <figcaption>Figure 4 - Common collector amplifier</figcaption>
+  <br>
+</figure>
 
 ### Lesson 8.3: Worked Example 2 - High Impedance Buffer
 
