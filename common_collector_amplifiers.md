@@ -45,6 +45,7 @@ The output (emitter) is almost the same as the input (base), hence "follower."
   <figcaption>Figure 1 - Common collector amplifier</figcaption>
   <br>
 </figure>
+<br>
 
 ### Lesson 6.2: DC Biasing for Emitter Follower
 
@@ -58,6 +59,7 @@ The output (emitter) is almost the same as the input (base), hence "follower."
   <figcaption>Figure 2 - Common collector voltage divider bias</figcaption>
   <br>
 </figure>
+<br>
 
 **Content:**
 
