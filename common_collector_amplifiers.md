@@ -54,7 +54,7 @@ The output (emitter) is almost the same as the input (base), hence "follower."
 - Understand design considerations
 
 <figure style="text-align:center">
-  <img src="images/voltage-divider-bias-cc.png" alt="Figure 2 - Common collector voltage divider bias" style="width:40%">
+  <img src="images/volt-divider-bias-cc.png" alt="Figure 2 - Common collector voltage divider bias" style="width:40%">
   <figcaption>Figure 1 - Common collector voltage divider bias</figcaption>
   <br>
 </figure>
