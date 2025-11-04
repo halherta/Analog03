@@ -4,10 +4,10 @@
 
 ## Module 6: Introduction to Common Collector Configuration
 
-### Lesson 6.1: What is an Emitter Follower?
+### Lesson 6.1: What is a Common Collector?
 
 **Learning Objectives:**
-- Understand the common collector configuration
+- Understand the common collector (emitter follower) configuration
 - Compare with common emitter amplifiers
 - Learn typical applications
 
@@ -24,7 +24,7 @@ In a Common Collector (CC) amplifier:
 - CE amplifier: Output from collector, high voltage gain, inverts signal
 - CC amplifier: Output from emitter, voltage gain ≈ 1, no inversion
 
-**Why "Emitter Follower"?**
+**Why is the common-collector configuration also called the "Emitter Follower"?**
 The emitter voltage "follows" the base voltage:
 ```
 vE ≈ vB - 0.7V
@@ -40,37 +40,11 @@ The output (emitter) is almost the same as the input (base), hence "follower."
 
 **Circuit Topology:**
 
-```
-         VCC
-          |
-          |
-         R1
-          |
-    _____|_____
-   |           |
-   |    B      R2
-   |    |      |
-vin----||------+------- (to transistor base)
-       C1      |
-               |
-              GND
-               
-        Collector to VCC
-              |
-              C
-             /
-        B---| T1
-             \
-              E
-              |
-              +----||----vout
-              |    C2    
-             RE         RL
-              |          |
-             GND        GND
-```
-
----
+<figure style="text-align:center">
+  <img src="images/common-collector.png" alt="Figure 1 - Common collector amplifier" style="width:40%">
+  <figcaption>Figure 1 - Common collector amplifier</figcaption>
+  <br>
+</figure>
 
 ### Lesson 6.2: DC Biasing for Emitter Follower
 
@@ -78,6 +52,12 @@ vin----||------+------- (to transistor base)
 - Design bias network for CC amplifier
 - Calculate Q-point
 - Understand design considerations
+
+<figure style="text-align:center">
+  <img src="images/voltage-divider-bias-cc.png" alt="Figure 2 - Common collector voltage divider bias" style="width:40%">
+  <figcaption>Figure 1 - Common collector voltage divider bias</figcaption>
+  <br>
+</figure>
 
 **Content:**
 
